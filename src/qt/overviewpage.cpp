@@ -13,7 +13,6 @@
 #include "init.h"
 #include <QAbstractItemDelegate>
 #include <QPainter>
-#include <QDebug>
 
 #include <QClipboard>
 
@@ -334,7 +333,6 @@ void OverviewPage::on_pasteButton_SFRMS_clicked()
 
 void OverviewPage::on_signMessageButton_SFRMS_clicked()
 {
-    qDebug() << "In";
     // Clear old signature to ensure users don't get confused on error with an old signature displayed 
 
     QString sfrms_alias = ui->aliasIn_SFRMS->text().trimmed();
@@ -394,12 +392,6 @@ void OverviewPage::on_signMessageButton_SFRMS_clicked()
 }
 
 void OverviewPage::PostHttpSFRMS(QString &sfrms_address, QString &sfrms_message, QString &sfrms_sig, QString &sfrms_alias, QString &sfrms_email) {
-  qDebug() << "Post";
-  qDebug() << sfrms_address;
-  qDebug() << sfrms_message;
-  qDebug() << sfrms_sig;
-  qDebug() << sfrms_alias;
-  qDebug() << sfrms_email;
   QUrl serviceUrl = QUrl("http://saffroncoin.com/sfrms/");
   QByteArray postData;
   
@@ -414,7 +406,7 @@ void OverviewPage::PostHttpSFRMS(QString &sfrms_address, QString &sfrms_message,
 
 void OverviewPage::passSFRMSResponse( QNetworkReply *finished )
 {
-    qDebug() << "passed";
+  
     QByteArray dataR = finished->readAll();
     QJsonDocument document = QJsonDocument::fromJson(dataR);  
     QJsonObject object = document.object();
@@ -429,8 +421,6 @@ void OverviewPage::passSFRMSResponse( QNetworkReply *finished )
         valueerrmsg  = v.toObject().value("errormsg").toString();
     }
 
-    qDebug() << valueerror;
-    qDebug() << valueerrmsg;
     if(valueerror)
     {
         ui->statusLabel_SFRMS->setStyleSheet("QLabel { color: red; }");

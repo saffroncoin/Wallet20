@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = saffroncoin-qt
 macx:TARGET = "Saffroncoin-Qt"
-VERSION = 2.3.1-beta
+VERSION = 2.4
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkitwidgets

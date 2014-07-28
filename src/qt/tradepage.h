@@ -40,8 +40,10 @@ private:
 
 private slots:
     void LoadBittrexWebview();
+    void LoadCryptsyWebview();
     void LoadMintpalWebview();
     void LoadBittrexWebviewBottom();
+    void LoadCryptsyWebviewBottom();
     void LoadMintpalWebviewBottom();
 };
 

@@ -57,7 +57,7 @@ void ExplorerPage::finished(QNetworkReply *reply) {
 void ExplorerPage::GetHttpContent() {
   ui->webViewExplorer->setHidden(false);
   ui->submitButton->setHidden(true);
-  ui->labelExplorerNote->setHidden(true);
+
   //QUrl url;
   //QNetworkRequest request;
   //url.setUrl("http://explorer.saffroncoin.com/search?q=");

@@ -28,6 +28,7 @@ TradePage::TradePage(QWidget *parent) :
     ui->webViewTrade->setHidden(true);
     ui->frameExchangesBottom->setHidden(true);         
     connect(ui->pushButtonBittrex,SIGNAL(clicked()),this,SLOT(LoadBittrexWebview()));
+    connect(ui->pushButtonCryptsy,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebview()));
     connect(ui->pushButtonMintpal,SIGNAL(clicked()),this,SLOT(LoadMintpalWebview()));
 }
 
@@ -56,6 +57,18 @@ void TradePage::LoadBittrexWebview() {
   QString url = "https://www.bittrex.com/Market/?MarketName=BTC-SFR";            
   ui->webViewTrade->load(QNetworkRequest(url));
   connect(ui->pushButtonBittrex_bottom,SIGNAL(clicked()),this,SLOT(LoadBittrexWebviewBottom()));
+  connect(ui->pushButtonCryptsy_bottom,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebviewBottom()));
+  connect(ui->pushButtonMintpal_bottom,SIGNAL(clicked()),this,SLOT(LoadMintpalWebviewBottom()));
+}
+
+void TradePage::LoadCryptsyWebview() {
+  ui->webViewTrade->setHidden(false);
+  ui->frameExchangesCenter->setHidden(true);
+  ui->frameExchangesBottom->setHidden(false);
+  QString url = "https://www.cryptsy.com/markets/view/270";            
+  ui->webViewTrade->load(QNetworkRequest(url));
+  connect(ui->pushButtonBittrex_bottom,SIGNAL(clicked()),this,SLOT(LoadBittrexWebviewBottom()));
+  connect(ui->pushButtonCryptsy_bottom,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebviewBottom()));
   connect(ui->pushButtonMintpal_bottom,SIGNAL(clicked()),this,SLOT(LoadMintpalWebviewBottom()));
 }
 
@@ -66,6 +79,7 @@ void TradePage::LoadMintpalWebview() {
   QString url = "https://www.mintpal.com";            
   ui->webViewTrade->load(QNetworkRequest(url));
   connect(ui->pushButtonBittrex_bottom,SIGNAL(clicked()),this,SLOT(LoadBittrexWebviewBottom()));
+  connect(ui->pushButtonCryptsy_bottom,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebviewBottom()));
   connect(ui->pushButtonMintpal_bottom,SIGNAL(clicked()),this,SLOT(LoadMintpalWebviewBottom()));
 }
 
@@ -74,6 +88,14 @@ void TradePage::LoadBittrexWebviewBottom() {
   ui->frameExchangesCenter->setHidden(true);
   ui->frameExchangesBottom->setHidden(false);
   QString url = "https://www.bittrex.com/Market/?MarketName=BTC-SFR";            
+  ui->webViewTrade->load(QNetworkRequest(url));
+}
+
+void TradePage::LoadCryptsyWebviewBottom() {
+  ui->webViewTrade->setHidden(false);
+  ui->frameExchangesCenter->setHidden(true);
+  ui->frameExchangesBottom->setHidden(false);
+  QString url = "https://www.cryptsy.com/markets/view/270";            
   ui->webViewTrade->load(QNetworkRequest(url));
 }
 
