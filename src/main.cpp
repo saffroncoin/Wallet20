@@ -1395,7 +1395,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
        }
        else
        {
-            nSubsidyNEW2 = 0.7 * COIN;
+            nSubsidyNEW2 = 2 * COIN;
        }
 
        //Random Superblock For HF v1.3.3
