@@ -1,20 +1,33 @@
-Wallet v2.3.1-beta
-========
+Saffroncoin (SFR)
+===================================
 
-The code for the Multi-Tasking SaffronCoin wallet.
+Copyright (c) 2009-2013 Bitcoin Developers,
+Copyright (c) 2014 Saffroncoin Developers
 
-The original SaffronCoin daemon is at https://github.com/saffroncoin/saffroncoin
+What is Saffroncoin?
+------------------
 
+Saffroncoin is a new hybrid digital currency from India that enables instant payments to
+anyone, anywhere in the world. Saffroncoin uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network.
 
+Specifications
+------------------
 
-Features
-========
+- Proof of Work based. Mine using any of the 5 algorithms : sha256d(default), scrypt, groestl, X11 or Blake256.
+- Difficulty is retargeted every block.
+- 450 second block target per algorithm (90 second average across 5 algorithms).
+- Gradual Reduction of Block rewards. 
+- Random superblock with 5 times the reward.
+- Bonus 1st 2 days after launch where Block reward is 3*72 Coins.
 
-- First Crypto Wallet to make use of WebKit WebView technology to display fully-fledged web content in your Qt Wallet.
-- SFRBit to use SFR to buy goods/services where BTC is accepted.
-- Built-in Twitter Feed to stay up to date with the news surrounding SaffronCoin.
-- Display the Difficulties for each algorithm. The data is taken directly from the blockchain.
-- Exchange rates are automatically fetched from the top 2 exchanges having the highest volume of SaffronCoin and displayed on the home screen.
-- First Wallet to feature built in IRC. Now chat with the SaffronCoin community right from your Wallet. The channel is #saffroncoin (Case Sensitive).
-- First Wallet to include a fully-fledged GUI Block Explorer.
-- First Wallet to include a fully-fledged Trading Platform on multiple exchanges.
+ANN Thread
+------------------
+https://bitcointalk.org/index.php?topic=586320
+
+License
+-------
+
+Saffroncoin is released under the terms of the MIT license. See `COPYING` for more
+information or see http://opensource.org/licenses/MIT.
