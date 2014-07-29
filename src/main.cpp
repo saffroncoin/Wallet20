@@ -1306,12 +1306,12 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
         }
     }
 
-    else if(nHeight > DIFF_SWITCH_BLOCK_2 && nHeight < DIFF_SWITCH_BLOCK_3)
+    else if(nHeight > DIFF_SWITCH_BLOCK && nHeight < DIFF_SWITCH_BLOCK_3)
     {
         //Random Superblock
-        if(rand > 2190 && rand < 2199)  
+        if(rand > 2099 && rand < 2199)  
         {
-            nSubsidyNEW2 *= 5;
+            nSubsidyNEW *= 5;
         }
     }
 
@@ -1399,7 +1399,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
        }
 
        //Random Superblock For HF v1.3.3
-        if(rand > 2099 && rand < 2199)  
+        if(rand > 2190 && rand < 2199)  
         {
             nSubsidyNEW2 *= 3;
         }
