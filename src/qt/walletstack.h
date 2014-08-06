@@ -18,6 +18,7 @@ class WalletModel;
 class WalletView;
 class TransactionView;
 class OverviewPage;
+class SFRPayPage;
 class TradePage;
 class ExplorerPage;
 class IRCPage;
@@ -80,6 +81,8 @@ public slots:
     void gotoAddressBookPage();
      /** Switch to Block Explorer page */
     void gotoExplorerPage();
+    /** Switch to SFRPay page */
+    void gotoSFRPayPage();
     /** Switch to Trade page */
     void gotoTradePage();
     /** Switch to IRC page */

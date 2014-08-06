@@ -91,6 +91,13 @@ void WalletStack::gotoAddressBookPage()
         i.value()->gotoAddressBookPage();
 }
 
+void WalletStack::gotoSFRPayPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoSFRPayPage();
+}
+
 void WalletStack::gotoTradePage()
 {
     QMap<QString, WalletView*>::const_iterator i;

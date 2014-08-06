@@ -221,6 +221,13 @@ void BitcoinGUI::createActions(bool fIsTestnet)
     sendBitCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
     tabGroup->addAction(sendBitCoinsAction);
 
+    sfrpayAction = new QAction(QIcon(":/icons/sfrpay"), tr("&SFRPay"), this);
+    sfrpayAction->setStatusTip(tr("Buy SFR with fiat through PayPal"));
+    sfrpayAction->setToolTip(sfrpayAction->statusTip());
+    sfrpayAction->setCheckable(true);
+    sfrpayAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+    tabGroup->addAction(sfrpayAction);
+
     tradeAction = new QAction(QIcon(":/icons/trade"), tr("&Trade"), this);
     tradeAction->setStatusTip(tr("Buy and Sell any digital currency on multiple exchanges"));
     tradeAction->setToolTip(tradeAction->statusTip());
@@ -254,6 +261,8 @@ void BitcoinGUI::createActions(bool fIsTestnet)
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
     connect(sendBitCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(sendBitCoinsAction, SIGNAL(triggered()), this, SLOT(gotoSendBitCoinsPage()));
+    connect(sfrpayAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(sfrpayAction, SIGNAL(triggered()), this, SLOT(gotoSFRPayPage()));
     connect(tradeAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(tradeAction, SIGNAL(triggered()), this, SLOT(gotoTradePage()));
     connect(explorerAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -351,6 +360,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
     toolbar->addAction(sendBitCoinsAction);
+    toolbar->addAction(sfrpayAction);
     toolbar->addAction(tradeAction);
     toolbar->addAction(explorerAction);
     toolbar->addAction(ircAction);
@@ -516,6 +526,11 @@ void BitcoinGUI::gotoHistoryPage()
 void BitcoinGUI::gotoAddressBookPage()
 {
     if (walletFrame) walletFrame->gotoAddressBookPage();
+}
+
+void BitcoinGUI::gotoSFRPayPage()
+{
+    if (walletFrame) walletFrame->gotoSFRPayPage();
 }
 
 void BitcoinGUI::gotoTradePage()

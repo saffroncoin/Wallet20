@@ -17,6 +17,7 @@
 #include "transactionview.h"
 #include "overviewpage.h"
 #include "explorerpage.h"
+#include "sfrpaypage.h"
 #include "tradepage.h"
 #include "ircpage.h"
 #include "askpassphrasedialog.h"
@@ -42,6 +43,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
 {
     // Create tabs
     overviewPage = new OverviewPage();
+    sfrpayPage = new SFRPayPage();
     tradePage = new TradePage();
     explorerPage = new ExplorerPage();
     ircPage = new IRCPage();
@@ -71,6 +73,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     signVerifyMessageDialog = new SignVerifyMessageDialog(gui);
 
     addWidget(overviewPage);
+    addWidget(sfrpayPage);
     addWidget(tradePage);
     addWidget(explorerPage);
     addWidget(ircPage);
@@ -114,6 +117,7 @@ void WalletView::setClientModel(ClientModel *clientModel)
     if (clientModel)
     {
         overviewPage->setClientModel(clientModel);
+        sfrpayPage->setClientModel(clientModel);
         tradePage->setClientModel(clientModel);
         explorerPage->setClientModel(clientModel);
         ircPage->setClientModel(clientModel);
@@ -184,6 +188,12 @@ void WalletView::gotoAddressBookPage()
 {
     gui->getAddressBookAction()->setChecked(true);
     setCurrentWidget(addressBookPage);
+}
+
+void WalletView::gotoSFRPayPage()
+{
+    gui->getSFRPayAction()->setChecked(true);
+    setCurrentWidget(sfrpayPage);
 }
 
 void WalletView::gotoTradePage()

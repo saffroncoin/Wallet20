@@ -15,6 +15,7 @@ class WalletModel;
 class TransactionView;
 class OverviewPage;
 class AddressBookPage;
+class SFRPayPage;
 class TradePage;
 class ExplorerPage;
 class IRCPage;
@@ -63,6 +64,7 @@ private:
     WalletModel *walletModel;
 
     OverviewPage *overviewPage;
+    SFRPayPage *sfrpayPage;
     TradePage *tradePage;
     ExplorerPage *explorerPage;
     IRCPage *ircPage;
@@ -82,6 +84,8 @@ public slots:
     void gotoHistoryPage();
     /** Switch to address book page */
     void gotoAddressBookPage();
+    /** Switch to SFRPay page */
+    void gotoSFRPayPage();
     /** Switch to Trading page */
     void gotoTradePage();
     /** Switch to Explorer page */

@@ -83,6 +83,11 @@ void WalletFrame::gotoAddressBookPage()
     walletStack->gotoAddressBookPage();
 }
 
+void WalletFrame::gotoSFRPayPage()
+{
+    walletStack->gotoSFRPayPage();
+}
+
 void WalletFrame::gotoTradePage()
 {
     walletStack->gotoTradePage();

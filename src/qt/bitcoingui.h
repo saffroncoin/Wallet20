@@ -13,6 +13,7 @@ class WalletModel;
 class WalletStack;
 class TransactionView;
 class OverviewPage;
+class SFRPayPage;
 class TradePage;
 class ExplorerPage;
 class IRCPage;
@@ -69,6 +70,7 @@ public:
     QAction * getOverviewAction() { return overviewAction; }
     QAction * getHistoryAction() { return historyAction; }
     QAction * getAddressBookAction() { return addressBookAction; }
+    QAction * getSFRPayAction() { return sfrpayAction; }
     QAction * getTradeAction() { return tradeAction; }
     QAction * getExplorerAction() { return explorerAction; }
     QAction * getIRCAction() { return ircAction; }
@@ -100,6 +102,7 @@ private:
     QAction *sendCoinsAction;
     QAction *sendBitCoinsAction;
     QAction *addressBookAction;
+    QAction *sfrpayAction;
     QAction *tradeAction;
     QAction *explorerAction;
     QAction *ircAction;
@@ -179,6 +182,8 @@ private slots:
     void gotoHistoryPage();
     /** Switch to address book page */
     void gotoAddressBookPage();
+     /** Switch to SFRPay page */
+    void gotoSFRPayPage();
     /** Switch to Trading page */
     void gotoTradePage();
     /** Switch to Explorer page */

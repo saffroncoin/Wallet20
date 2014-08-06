@@ -45,6 +45,8 @@ public slots:
     void gotoHistoryPage();
     /** Switch to address book page */
     void gotoAddressBookPage();
+    /** Switch to SFRPay page */
+    void gotoSFRPayPage();
     /** Switch to Trading page */
     void gotoTradePage();
      /** Switch to Block Explorer page */
