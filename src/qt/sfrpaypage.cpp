@@ -141,6 +141,7 @@ void SFRPayPage::passSFRPayResponse( QNetworkReply *finished )
     ui->labelRecentFiat->setText(valuefiat);
     ui->statusLabel_SFRPay->clear();
     ui->sfrPayEmail->clear();
+    ui->sfrPayConfirmEmail->clear();
 }
 
 void SFRPayPage::on_pushButtonSFRPayReset_clicked()
