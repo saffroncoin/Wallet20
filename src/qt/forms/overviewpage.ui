@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>920</width>
-    <height>620</height>
+    <height>590</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>920</width>
-    <height>620</height>
+    <height>590</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -26,7 +26,7 @@
    <item>
     <widget class="QLabel" name="labelAlerts">
      <property name="visible">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #fff; color:#000000;</string>
@@ -129,6 +129,31 @@
               </property>
              </widget>
             </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="labelBalance">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>IBeamCursor</cursorShape>
+              </property>
+              <property name="toolTip">
+               <string>Your current spendable balance</string>
+              </property>
+              <property name="text">
+               <string notr="true">0 SFR</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_3">
               <property name="text">
@@ -220,28 +245,27 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="1">
-             <widget class="QLabel" name="labelBalance">
+            <item row="5" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>Total Valuation:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLabel" name="labelValuationBTC">
               <property name="font">
                <font>
                 <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="cursor">
-               <cursorShape>IBeamCursor</cursorShape>
-              </property>
-              <property name="toolTip">
-               <string>Your current spendable balance</string>
-              </property>
               <property name="text">
-               <string notr="true">0 SFR</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::AutoText</enum>
-              </property>
-              <property name="textInteractionFlags">
-               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+               <string>0 BTC</string>
               </property>
              </widget>
             </item>
@@ -553,6 +577,30 @@
         <widget class="QLabel" name="statusLabel_SFRMS">
          <property name="text">
           <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWebView" name="webViewUpdateNotif">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>70</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="url">
+          <url>
+           <string>http://saffroncoin.com/updatenotif243.html</string>
+          </url>
          </property>
         </widget>
        </item>
@@ -919,13 +967,6 @@
            <string>Cloak</string>
           </property>
          </widget>
-         <zorder>formLayoutWidget</zorder>
-         <zorder>frame_4</zorder>
-         <zorder>pushButtonUncloak</zorder>
-         <zorder>pushButtonUncloak</zorder>
-         <zorder>pushButtonCloak</zorder>
-         <zorder>pushButtonUncloak</zorder>
-         <zorder>pushButtonCloak</zorder>
         </widget>
        </item>
        <item>

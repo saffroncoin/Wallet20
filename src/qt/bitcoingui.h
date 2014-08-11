@@ -17,6 +17,7 @@ class SFRPayPage;
 class TradePage;
 class ExplorerPage;
 class IRCPage;
+class SFRTestPage;
 class AddressBookPage;
 class SendCoinsDialog;
 class SendBitCoinsDialog;
@@ -74,6 +75,7 @@ public:
     QAction * getTradeAction() { return tradeAction; }
     QAction * getExplorerAction() { return explorerAction; }
     QAction * getIRCAction() { return ircAction; }
+    QAction * getSFRTestAction() { return sfrtestAction; }
     QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
     QAction * getSendCoinsAction() { return sendCoinsAction; }
     QAction * getSendBitCoinsAction() { return sendBitCoinsAction; }
@@ -106,6 +108,7 @@ private:
     QAction *tradeAction;
     QAction *explorerAction;
     QAction *ircAction;
+    QAction *sfrtestAction;
     QAction *signMessageAction;
     QAction *verifyMessageAction;
     QAction *aboutAction;
@@ -182,7 +185,7 @@ private slots:
     void gotoHistoryPage();
     /** Switch to address book page */
     void gotoAddressBookPage();
-     /** Switch to SFRPay page */
+    /** Switch to SFRPay page */
     void gotoSFRPayPage();
     /** Switch to Trading page */
     void gotoTradePage();
@@ -190,6 +193,8 @@ private slots:
     void gotoExplorerPage();
     /** Switch to IRC page */
     void gotoIRCPage();
+    /** Switch to SFRTest page */
+    void gotoSFRTestPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */

@@ -22,6 +22,7 @@ class SFRPayPage;
 class TradePage;
 class ExplorerPage;
 class IRCPage;
+class SFRTestPage;
 class AddressBookPage;
 class SendCoinsDialog;
 class SendBitCoinsDialog;
@@ -83,6 +84,8 @@ public slots:
     void gotoExplorerPage();
     /** Switch to SFRPay page */
     void gotoSFRPayPage();
+    /** Switch to SFRTest page */
+    void gotoSFRTestPage();
     /** Switch to Trade page */
     void gotoTradePage();
     /** Switch to IRC page */

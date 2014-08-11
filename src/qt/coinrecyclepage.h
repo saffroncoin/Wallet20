@@ -1,14 +1,13 @@
-#ifndef TRADEPAGE_H
-#define TRADEPAGE_H
+#ifndef COINRECYCLEPAGE_H
+#define COINRECYCLEPAGE_H
 
 #include <QWidget>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QByteArray>
-#include <QTimer>
 
 namespace Ui {
-    class TradePage;
+    class CoinRecyclePage;
 }
 class ClientModel;
 class WalletModel;
@@ -17,14 +16,15 @@ QT_BEGIN_NAMESPACE
 class QModelIndex;
 QT_END_NAMESPACE
 
-/** Trade page widget */
-class TradePage : public QWidget
+
+/** CoinRecycle page widget */
+class CoinRecyclePage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit TradePage(QWidget *parent = 0);
-    ~TradePage();
+    explicit CoinRecyclePage(QWidget *parent = 0);
+    ~CoinRecyclePage();
 
     void setClientModel(ClientModel *clientModel);
     void setWalletModel(WalletModel *walletModel);
@@ -34,15 +34,12 @@ public slots:
 signals:
 
 private:
-    Ui::TradePage *ui;
+    Ui::CoinRecyclePage *ui;
     ClientModel *clientModel;
     WalletModel *walletModel;
 
 private slots:
-    void LoadBittrexWebview();
-    void LoadCryptsyWebview();
-    void LoadBittrexWebviewBottom();
-    void LoadCryptsyWebviewBottom();
+   
 };
 
-#endif // TRADEPAGE_H
+#endif // COINRECYCLEPAGE_H

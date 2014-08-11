@@ -53,6 +53,8 @@ public slots:
     void gotoExplorerPage();
     /** Switch to IRC #SaffronCoin page */
     void gotoIRCPage();
+    /** Switch to SFRTest page */
+    void gotoSFRTestPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */

@@ -54,6 +54,8 @@ private:
 
 private slots:
     void updateDisplayUnit();
+    void pullValuationDetails();
+    void passValuationResponse(QNetworkReply *reply);
     void handleTransactionClicked(const QModelIndex &index);
     void updateAlerts(const QString &warnings);
     void updateStats();

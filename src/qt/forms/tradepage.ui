@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>920</width>
-    <height>620</height>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -84,43 +84,6 @@ border-radius:5px</string>
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonMintpal">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>MS Shell Dlg 2</family>
-          <pointsize>12</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 139, 93), stop:1 rgb(0,139,93));
-color:#fff;
-border:1px solid #137b13;
-border-radius:5px;</string>
-        </property>
-        <property name="text">
-         <string>Mintpal</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
@@ -165,19 +128,6 @@ border-radius:5px;</string>
         </property>
         <property name="text">
          <string>Cryptsy</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonMintpal_bottom">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Mintpal</string>
         </property>
        </widget>
       </item>

@@ -249,6 +249,13 @@ void BitcoinGUI::createActions(bool fIsTestnet)
     ircAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_9));
     tabGroup->addAction(ircAction);
 
+    sfrtestAction = new QAction(QIcon(":/icons/recycle"), tr("&Coin Recycler"), this);
+    sfrtestAction->setStatusTip(tr("Recycle your other altcoins for SFR"));
+    sfrtestAction->setToolTip(sfrtestAction->statusTip());
+    sfrtestAction->setCheckable(true);
+    sfrtestAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+    tabGroup->addAction(sfrtestAction);
+
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -269,6 +276,8 @@ void BitcoinGUI::createActions(bool fIsTestnet)
     connect(explorerAction, SIGNAL(triggered()), this, SLOT(gotoExplorerPage()));
     connect(ircAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(ircAction, SIGNAL(triggered()), this, SLOT(gotoIRCPage()));
+    connect(sfrtestAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(sfrtestAction, SIGNAL(triggered()), this, SLOT(gotoSFRTestPage()));
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setStatusTip(tr("Quit application"));
@@ -364,6 +373,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(tradeAction);
     toolbar->addAction(explorerAction);
     toolbar->addAction(ircAction);
+    toolbar->addAction(sfrtestAction);
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
@@ -546,6 +556,11 @@ void BitcoinGUI::gotoExplorerPage()
 void BitcoinGUI::gotoIRCPage()
 {
     if (walletFrame) walletFrame->gotoIRCPage();
+}
+
+void BitcoinGUI::gotoSFRTestPage()
+{
+    if (walletFrame) walletFrame->gotoSFRTestPage();
 }
 
 void BitcoinGUI::gotoReceiveCoinsPage()

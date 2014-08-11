@@ -189,6 +189,42 @@ void OverviewPage::setBalance(qint64 balance, qint64 unconfirmedBalance, qint64 
     bool showImmature = immatureBalance != 0;
     ui->labelImmature->setVisible(showImmature);
     ui->labelImmatureText->setVisible(showImmature);
+
+    pullValuationDetails();
+}
+
+
+void OverviewPage::pullValuationDetails()
+{
+   
+    QUrl serviceUrl = QUrl("http://saffroncoin.com/valuation.php");
+    QByteArray postData;
+    postData.append("amount=").append(ui->labelTotal->text());
+    QNetworkAccessManager *networkManager = new QNetworkAccessManager(this);
+    connect(networkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(passValuationResponse(QNetworkReply*)));
+    QNetworkRequest request(serviceUrl);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+    networkManager->post(request,postData);
+}
+
+void OverviewPage::passValuationResponse(QNetworkReply *finished)
+{
+    
+    QByteArray dataR = finished->readAll();
+
+    QJsonDocument document = QJsonDocument::fromJson(dataR);  
+    QJsonObject object = document.object();
+    QJsonValue valuationdetails = object.value("valuationdetails");
+    QJsonArray detarray = valuationdetails.toArray();
+
+    QString val;
+  
+    foreach (const QJsonValue & v, detarray)
+    { 
+        val = v.toObject().value("val").toString();  
+    }
+    
+    ui->labelValuationBTC->setText(val);
 }
 
 void OverviewPage::setClientModel(ClientModel *model)

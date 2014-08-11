@@ -103,6 +103,11 @@ void WalletFrame::gotoIRCPage()
     walletStack->gotoIRCPage();
 }
 
+void WalletFrame::gotoSFRTestPage()
+{
+    walletStack->gotoSFRTestPage();
+}
+
 void WalletFrame::gotoReceiveCoinsPage()
 {
     walletStack->gotoReceiveCoinsPage();

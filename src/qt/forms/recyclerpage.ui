@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SFRPayPage</class>
+ <widget class="QWidget" name="RecyclerPage">
+  
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

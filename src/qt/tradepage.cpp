@@ -29,7 +29,6 @@ TradePage::TradePage(QWidget *parent) :
     ui->frameExchangesBottom->setHidden(true);         
     connect(ui->pushButtonBittrex,SIGNAL(clicked()),this,SLOT(LoadBittrexWebview()));
     connect(ui->pushButtonCryptsy,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebview()));
-    connect(ui->pushButtonMintpal,SIGNAL(clicked()),this,SLOT(LoadMintpalWebview()));
 }
 
 TradePage::~TradePage()
@@ -58,7 +57,6 @@ void TradePage::LoadBittrexWebview() {
   ui->webViewTrade->load(QNetworkRequest(url));
   connect(ui->pushButtonBittrex_bottom,SIGNAL(clicked()),this,SLOT(LoadBittrexWebviewBottom()));
   connect(ui->pushButtonCryptsy_bottom,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebviewBottom()));
-  connect(ui->pushButtonMintpal_bottom,SIGNAL(clicked()),this,SLOT(LoadMintpalWebviewBottom()));
 }
 
 void TradePage::LoadCryptsyWebview() {
@@ -69,19 +67,8 @@ void TradePage::LoadCryptsyWebview() {
   ui->webViewTrade->load(QNetworkRequest(url));
   connect(ui->pushButtonBittrex_bottom,SIGNAL(clicked()),this,SLOT(LoadBittrexWebviewBottom()));
   connect(ui->pushButtonCryptsy_bottom,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebviewBottom()));
-  connect(ui->pushButtonMintpal_bottom,SIGNAL(clicked()),this,SLOT(LoadMintpalWebviewBottom()));
 }
 
-void TradePage::LoadMintpalWebview() {
-  ui->webViewTrade->setHidden(false);
-  ui->frameExchangesCenter->setHidden(true);
-  ui->frameExchangesBottom->setHidden(false);
-  QString url = "https://www.mintpal.com";            
-  ui->webViewTrade->load(QNetworkRequest(url));
-  connect(ui->pushButtonBittrex_bottom,SIGNAL(clicked()),this,SLOT(LoadBittrexWebviewBottom()));
-  connect(ui->pushButtonCryptsy_bottom,SIGNAL(clicked()),this,SLOT(LoadCryptsyWebviewBottom()));
-  connect(ui->pushButtonMintpal_bottom,SIGNAL(clicked()),this,SLOT(LoadMintpalWebviewBottom()));
-}
 
 void TradePage::LoadBittrexWebviewBottom() {
   ui->webViewTrade->setHidden(false);
@@ -99,10 +86,4 @@ void TradePage::LoadCryptsyWebviewBottom() {
   ui->webViewTrade->load(QNetworkRequest(url));
 }
 
-void TradePage::LoadMintpalWebviewBottom() {
-  ui->webViewTrade->setHidden(false);
-  ui->frameExchangesCenter->setHidden(true);
-  ui->frameExchangesBottom->setHidden(false);
-  QString url = "https://www.mintpal.com";            
-  ui->webViewTrade->load(QNetworkRequest(url));
-}
+

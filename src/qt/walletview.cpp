@@ -20,6 +20,7 @@
 #include "sfrpaypage.h"
 #include "tradepage.h"
 #include "ircpage.h"
+#include "sfrtestpage.h"
 #include "askpassphrasedialog.h"
 #include "ui_interface.h"
 
@@ -47,6 +48,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     tradePage = new TradePage();
     explorerPage = new ExplorerPage();
     ircPage = new IRCPage();
+    sfrtestPage = new SFRTestPage();
     transactionsPage = new QWidget(this);
     QVBoxLayout *vbox = new QVBoxLayout();
     QHBoxLayout *hbox_buttons = new QHBoxLayout();
@@ -77,6 +79,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     addWidget(tradePage);
     addWidget(explorerPage);
     addWidget(ircPage);
+    addWidget(sfrtestPage);
     addWidget(transactionsPage);
     addWidget(addressBookPage);
     addWidget(receiveCoinsPage);
@@ -121,6 +124,7 @@ void WalletView::setClientModel(ClientModel *clientModel)
         tradePage->setClientModel(clientModel);
         explorerPage->setClientModel(clientModel);
         ircPage->setClientModel(clientModel);
+        sfrtestPage->setClientModel(clientModel);
         addressBookPage->setOptionsModel(clientModel->getOptionsModel());
         receiveCoinsPage->setOptionsModel(clientModel->getOptionsModel());
     }
@@ -212,6 +216,12 @@ void WalletView::gotoIRCPage()
 {
     gui->getIRCAction()->setChecked(true);
     setCurrentWidget(ircPage);
+}
+
+void WalletView::gotoSFRTestPage()
+{
+    gui->getSFRTestAction()->setChecked(true);
+    setCurrentWidget(sfrtestPage);
 }
 
 void WalletView::gotoReceiveCoinsPage()

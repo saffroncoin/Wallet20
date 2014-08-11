@@ -15,8 +15,6 @@
 #include <QAbstractItemDelegate>
 #include <QPainter>
 
-#include <QDebug>
-
 #include <QNetworkRequest>
 #include <QDesktopServices>
 #include <QNetworkAccessManager>
@@ -46,6 +44,8 @@ SFRPayPage::SFRPayPage(QWidget *parent) :
     ui->comboBoxVoucher->addItem("2000"); 
     ui->comboBoxVoucher->addItem("3000"); 
     ui->comboBoxVoucher->addItem("5000");
+    ui->comboBoxVoucher->addItem("7000");
+    ui->comboBoxVoucher->addItem("10000");
     
     //ui->webViewSFRPay->setHidden(true);
    

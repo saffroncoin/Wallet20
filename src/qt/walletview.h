@@ -19,6 +19,7 @@ class SFRPayPage;
 class TradePage;
 class ExplorerPage;
 class IRCPage;
+class SFRTestPage;
 class SendCoinsDialog;
 class SendBitCoinsDialog;
 class SignVerifyMessageDialog;
@@ -68,6 +69,7 @@ private:
     TradePage *tradePage;
     ExplorerPage *explorerPage;
     IRCPage *ircPage;
+    SFRTestPage *sfrtestPage;
     QWidget *transactionsPage;
     AddressBookPage *addressBookPage;
     AddressBookPage *receiveCoinsPage;
@@ -86,6 +88,8 @@ public slots:
     void gotoAddressBookPage();
     /** Switch to SFRPay page */
     void gotoSFRPayPage();
+    /** Switch to SFRTest page */
+    void gotoSFRTestPage();
     /** Switch to Trading page */
     void gotoTradePage();
     /** Switch to Explorer page */

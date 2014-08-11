@@ -3,6 +3,7 @@
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="address-book">res/icons/address-book.png</file>
         <file alias="irc">res/icons/irc.png</file>
+        <file alias="recycle">res/icons/recycle.png</file>
         <file alias="trade">res/icons/trade.png</file>
         <file alias="explorer">res/icons/explorer.png</file>
         <file alias="sfrbit">res/icons/sfrbit.png</file>
