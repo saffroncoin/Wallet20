@@ -16,6 +16,7 @@ class OverviewPage;
 class SFRPayPage;
 class TradePage;
 class ExplorerPage;
+class TopupPage;
 class IRCPage;
 class SFRTestPage;
 class AddressBookPage;
@@ -74,6 +75,7 @@ public:
     QAction * getSFRPayAction() { return sfrpayAction; }
     QAction * getTradeAction() { return tradeAction; }
     QAction * getExplorerAction() { return explorerAction; }
+    QAction * getTopupAction() { return topupAction; }
     QAction * getIRCAction() { return ircAction; }
     QAction * getSFRTestAction() { return sfrtestAction; }
     QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
@@ -107,6 +109,7 @@ private:
     QAction *sfrpayAction;
     QAction *tradeAction;
     QAction *explorerAction;
+    QAction *topupAction;
     QAction *ircAction;
     QAction *sfrtestAction;
     QAction *signMessageAction;
@@ -191,6 +194,8 @@ private slots:
     void gotoTradePage();
     /** Switch to Explorer page */
     void gotoExplorerPage();
+    void gotoTopupPage();
+    /** Switch to Precharge page */
     /** Switch to IRC page */
     void gotoIRCPage();
     /** Switch to SFRTest page */

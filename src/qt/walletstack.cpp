@@ -119,6 +119,15 @@ void WalletStack::gotoExplorerPage()
         i.value()->gotoExplorerPage();
 }
 
+void WalletStack::gotoTopupPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoTopupPage();
+}
+
+
+
 void WalletStack::gotoIRCPage()
 {
     QMap<QString, WalletView*>::const_iterator i;

@@ -30,7 +30,7 @@
      </property>
      <property name="url">
       <url>
-       <string>http://webchat.freenode.net/?channels=#saffroncoin</string>
+       <string>http://webchat.freenode.net/?channels=#sfrcoin</string>
       </url>
      </property>
     </widget>

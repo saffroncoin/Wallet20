@@ -49,9 +49,10 @@ public slots:
     void gotoSFRPayPage();
     /** Switch to Trading page */
     void gotoTradePage();
-     /** Switch to Block Explorer page */
+    /** Switch to Block Explorer page */
     void gotoExplorerPage();
-    /** Switch to IRC #SaffronCoin page */
+    void gotoTopupPage();
+    /** Switch to IRC #SFRCoin page */
     void gotoIRCPage();
     /** Switch to SFRTest page */
     void gotoSFRTestPage();

@@ -6,6 +6,7 @@
         <file alias="recycle">res/icons/recycle.png</file>
         <file alias="trade">res/icons/trade.png</file>
         <file alias="explorer">res/icons/explorer.png</file>
+        <file alias="precharge">res/icons/precharge.png</file>
         <file alias="sfrbit">res/icons/sfrbit.png</file>
         <file alias="sfrpay">res/icons/sfrpay.png</file>
         <file alias="quit">res/icons/quit.png</file>

@@ -21,6 +21,7 @@ class OverviewPage;
 class SFRPayPage;
 class TradePage;
 class ExplorerPage;
+class TopupPage;
 class IRCPage;
 class SFRTestPage;
 class AddressBookPage;
@@ -80,8 +81,9 @@ public slots:
     void gotoHistoryPage();
     /** Switch to address book page */
     void gotoAddressBookPage();
-     /** Switch to Block Explorer page */
+    /** Switch to Block Explorer page */
     void gotoExplorerPage();
+    void gotoTopupPage();
     /** Switch to SFRPay page */
     void gotoSFRPayPage();
     /** Switch to SFRTest page */

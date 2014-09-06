@@ -228,7 +228,7 @@ void BitcoinGUI::createActions(bool fIsTestnet)
     sfrpayAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
     tabGroup->addAction(sfrpayAction);
 
-    tradeAction = new QAction(QIcon(":/icons/trade"), tr("&Trade"), this);
+    tradeAction = new QAction(QIcon(":/icons/trade"), tr("&Exchanges"), this);
     tradeAction->setStatusTip(tr("Buy and Sell any digital currency on multiple exchanges"));
     tradeAction->setToolTip(tradeAction->statusTip());
     tradeAction->setCheckable(true);
@@ -242,7 +242,14 @@ void BitcoinGUI::createActions(bool fIsTestnet)
     explorerAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_8));
     tabGroup->addAction(explorerAction);
 
-    ircAction = new QAction(QIcon(":/icons/irc"), tr("&IRC - #SaffronCoin"), this);
+    topupAction = new QAction(QIcon(":/icons/precharge"), tr("&Top-Up"), this);
+    topupAction->setStatusTip(tr("Top-Up your mobile and other prepaid devices using crypto-currencies"));
+    topupAction->setToolTip(topupAction->statusTip());
+    topupAction->setCheckable(true);
+    topupAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_8));
+    tabGroup->addAction(topupAction);
+
+    ircAction = new QAction(QIcon(":/icons/irc"), tr("&IRC - #SFRcoin"), this);
     ircAction->setStatusTip(tr("Chat with the SaffronCoin community through IRC"));
     ircAction->setToolTip(ircAction->statusTip());
     ircAction->setCheckable(true);
@@ -274,6 +281,8 @@ void BitcoinGUI::createActions(bool fIsTestnet)
     connect(tradeAction, SIGNAL(triggered()), this, SLOT(gotoTradePage()));
     connect(explorerAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(explorerAction, SIGNAL(triggered()), this, SLOT(gotoExplorerPage()));
+    connect(topupAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(topupAction, SIGNAL(triggered()), this, SLOT(gotoTopupPage()));
     connect(ircAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(ircAction, SIGNAL(triggered()), this, SLOT(gotoIRCPage()));
     connect(sfrtestAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -362,18 +371,96 @@ void BitcoinGUI::createMenuBar()
 void BitcoinGUI::createToolBars()
 {
     QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
+    addToolBar(Qt::LeftToolBarArea, toolbar);
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     toolbar->addAction(overviewAction);
     toolbar->addAction(sendCoinsAction);
     toolbar->addAction(receiveCoinsAction);
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
+    toolbar->addSeparator();
+
+    QWidget* stats_up_empty = new QWidget();
+    stats_up_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(stats_up_empty);
+
+    QLabel* stats_lbl = new QLabel();
+    stats_lbl->setText("<b>Statistics</b>");
+    stats_lbl->setAlignment(Qt::AlignHCenter);
+    toolbar->addWidget(stats_lbl);
+
+    QWidget* stats_below_empty = new QWidget();
+    stats_below_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(stats_below_empty);
+
+    toolbar->addAction(explorerAction);
+    QWidget* stats_end_empty = new QWidget();
+    stats_end_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(stats_end_empty);
+    toolbar->addSeparator();
+
+    QWidget* trade_up_empty = new QWidget();
+    trade_up_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(trade_up_empty);
+
+    QLabel* trade_lbl = new QLabel();
+    trade_lbl->setText("<b>Trading Suite</b>");
+    trade_lbl->setAlignment(Qt::AlignHCenter);
+    toolbar->addWidget(trade_lbl);
+
+    QWidget* trade_below_empty = new QWidget();
+    trade_below_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(trade_below_empty);
+
     toolbar->addAction(sendBitCoinsAction);
     toolbar->addAction(sfrpayAction);
     toolbar->addAction(tradeAction);
-    toolbar->addAction(explorerAction);
-    toolbar->addAction(ircAction);
     toolbar->addAction(sfrtestAction);
+    QWidget* trade_end_empty = new QWidget();
+    trade_end_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(trade_end_empty);
+    toolbar->addSeparator();
+
+    QWidget* usage_up_empty = new QWidget();
+    usage_up_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(usage_up_empty);
+
+    QLabel* usage_lbl = new QLabel();
+    usage_lbl->setText("<b>Usage</b>");
+    usage_lbl->setAlignment(Qt::AlignHCenter);
+    toolbar->addWidget(usage_lbl);
+
+    QWidget* usage_below_empty = new QWidget();
+    usage_below_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(usage_below_empty);
+
+    toolbar->addAction(topupAction);
+    QWidget* usage_end_empty = new QWidget();
+    usage_end_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(usage_end_empty);
+    toolbar->addSeparator();
+
+    QWidget* social_up_empty = new QWidget();
+    social_up_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(social_up_empty);
+
+    QLabel* social_lbl = new QLabel();
+    social_lbl->setText("<b>Social</b>");
+    social_lbl->setAlignment(Qt::AlignHCenter);
+    toolbar->addWidget(social_lbl);
+
+    QWidget* social_below_empty = new QWidget();
+    social_below_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(social_below_empty);
+
+    toolbar->addAction(ircAction);
+    QWidget* social_end_empty = new QWidget();
+    social_end_empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    toolbar->addWidget(social_end_empty);
+
+    foreach(QAction *action, toolbar->actions()) {
+        toolbar->widgetForAction(action)->setFixedWidth(120);
+    }
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
@@ -552,6 +639,12 @@ void BitcoinGUI::gotoExplorerPage()
 {
     if (walletFrame) walletFrame->gotoExplorerPage();
 }
+
+void BitcoinGUI::gotoTopupPage()
+{
+    if (walletFrame) walletFrame->gotoTopupPage();
+}
+
 
 void BitcoinGUI::gotoIRCPage()
 {

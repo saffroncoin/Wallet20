@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = saffroncoin-qt
 macx:TARGET = "Saffroncoin-Qt"
-VERSION = 2.4.3
+VERSION = 2.5
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkitwidgets
@@ -217,6 +217,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/sfrtestpage.h \
     src/qt/tradepage.h \
     src/qt/explorerpage.h \
+    src/qt/topuppage.h \
     src/qt/csvmodelwriter.h \
     src/crypter.h \
     src/qt/sendcoinsentry.h \
@@ -318,6 +319,7 @@ SOURCES += src/qt/bitcoin.cpp \
     src/qt/sfrtestpage.cpp \
     src/qt/tradepage.cpp \
     src/qt/explorerpage.cpp \
+    src/qt/topuppage.cpp \
     src/qt/csvmodelwriter.cpp \
     src/crypter.cpp \
     src/qt/sendcoinsentry.cpp \
@@ -365,6 +367,7 @@ FORMS += src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/sfrtestpage.ui \
     src/qt/forms/tradepage.ui \
     src/qt/forms/explorerpage.ui \
+    src/qt/forms/topuppage.ui \
     src/qt/forms/sendcoinsentry.ui \
     src/qt/forms/sendbitcoinsentry.ui \
     src/qt/forms/askpassphrasedialog.ui \

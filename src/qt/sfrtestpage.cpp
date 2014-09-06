@@ -105,7 +105,7 @@ void SFRTestPage::passRecyclerResponse(QNetworkReply *finished)
   else
   {
     ui->statusLabel_SFRRecycler->setStyleSheet("QLabel { color: green; }");
-    ui->statusLabel_SFRRecycler->setText(tr("Send your %1 to address %2").arg(valuecoin).arg(valueaddress));
+    ui->statusLabel_SFRRecycler->setText(tr("Send your %1 to address: %2").arg(valuecoin).arg(valueaddress));
     ui->recyclerAddress->clear();
   }
 }

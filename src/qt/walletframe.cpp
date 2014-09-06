@@ -98,6 +98,12 @@ void WalletFrame::gotoExplorerPage()
     walletStack->gotoExplorerPage();
 }
 
+void WalletFrame::gotoTopupPage()
+{
+    walletStack->gotoTopupPage();
+}
+
+
 void WalletFrame::gotoIRCPage()
 {
     walletStack->gotoIRCPage();

@@ -17,6 +17,7 @@
 #include "transactionview.h"
 #include "overviewpage.h"
 #include "explorerpage.h"
+#include "topuppage.h"
 #include "sfrpaypage.h"
 #include "tradepage.h"
 #include "ircpage.h"
@@ -47,6 +48,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     sfrpayPage = new SFRPayPage();
     tradePage = new TradePage();
     explorerPage = new ExplorerPage();
+    topupPage = new TopupPage();
     ircPage = new IRCPage();
     sfrtestPage = new SFRTestPage();
     transactionsPage = new QWidget(this);
@@ -78,6 +80,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     addWidget(sfrpayPage);
     addWidget(tradePage);
     addWidget(explorerPage);
+    addWidget(topupPage);
     addWidget(ircPage);
     addWidget(sfrtestPage);
     addWidget(transactionsPage);
@@ -123,6 +126,7 @@ void WalletView::setClientModel(ClientModel *clientModel)
         sfrpayPage->setClientModel(clientModel);
         tradePage->setClientModel(clientModel);
         explorerPage->setClientModel(clientModel);
+        topupPage->setClientModel(clientModel);
         ircPage->setClientModel(clientModel);
         sfrtestPage->setClientModel(clientModel);
         addressBookPage->setOptionsModel(clientModel->getOptionsModel());
@@ -142,6 +146,7 @@ void WalletView::setWalletModel(WalletModel *walletModel)
         transactionView->setModel(walletModel);
         overviewPage->setWalletModel(walletModel);
         explorerPage->setWalletModel(walletModel);
+        topupPage->setWalletModel(walletModel);
         addressBookPage->setModel(walletModel->getAddressTableModel());
         receiveCoinsPage->setModel(walletModel->getAddressTableModel());
         sendCoinsPage->setModel(walletModel);
@@ -211,6 +216,13 @@ void WalletView::gotoExplorerPage()
     gui->getExplorerAction()->setChecked(true);
     setCurrentWidget(explorerPage);
 }
+
+void WalletView::gotoTopupPage()
+{
+    gui->getTopupAction()->setChecked(true);
+    setCurrentWidget(topupPage);
+}
+
 
 void WalletView::gotoIRCPage()
 {
